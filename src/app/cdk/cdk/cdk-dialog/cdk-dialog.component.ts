@@ -9,5 +9,4 @@ import { DialogData } from '../cdk.component';
 })
 export class CdkDialogComponent {
   constructor(@Inject(DIALOG_DATA) public data: DialogData) {}
-
 }
