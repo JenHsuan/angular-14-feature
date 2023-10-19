@@ -1,0 +1,84 @@
+<div class="title">FormGroup and explicit interface</div>
+
+<div class="content-container">
+  <pre>
+    <code [innerHTML]="escapeHtml(fromGroupCode)"></code>
+  </pre>
+</div>
+
+<div class="description-container">
+  <div>
+    There are a few advantages for adding the interface on the reactive form.
+  </div>
+  <ol>
+    <li>Prevent the exception for incorrect calculation</li>
+    <li>NonNullable property: prevent values of the will be null after restting</li>
+    <li>Limitations: setValue, removeControl are retricted for required fields</li>
+  </ol>
+</div>
+
+<div class="content-container">
+  <pre>
+    <code [innerHTML]="escapeHtml(fromGroupCodeError)"></code>
+  </pre>
+</div>
+
+<div class="title">FormRecord and UntypedFormGroup</div>
+<div class="description-container">
+  <div>
+    If we want to remove items from the FormGroup, we can use FormRecord and UntypedFormGroup 
+  </div>
+</div>
+
+<div class="content-container">
+  <pre>
+    <code [innerHTML]="escapeHtml(untypedFromGroupCodeError)"></code>
+  </pre>
+</div>
+
+<div class="title">Demo for FormGroup</div>
+<div class="demo-container"> 
+
+  <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <p>Form Status: {{ profileForm.status }}</p>
+    <p>Form Value: {{ getFormValue() }}</p>
+  
+    <button type="button" (click)="resetForm()">Reset Profile</button>
+    <button type="button" (click)="updateProfile()">Update Profile</button>
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+  
+    <div formGroupName="address">
+      <h2>Address</h2>
+    
+      <label for="street">Street: </label>
+      <input id="street" type="text" formControlName="street">
+    
+      <label for="city">City: </label>
+      <input id="city" type="text" formControlName="city">
+    
+      <label for="state">State: </label>
+      <input id="state" type="text" formControlName="state">
+    
+      <label for="zip">Zip Code: </label>
+      <input id="zip" type="text" formControlName="zip">
+    </div>
+    <div formArrayName="aliases">
+      <h2>Aliases</h2>
+      <button type="button" (click)="addAlias()">+ Add another alias</button>
+    
+      <div *ngFor="let alias of aliases.controls; let i=index">
+        <!-- The repeated alias template -->
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" [formControlName]="i">
+      </div>
+    </div>
+    
+    <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+</div>

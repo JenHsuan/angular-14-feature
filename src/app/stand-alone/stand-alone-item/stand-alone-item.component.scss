@@ -1,0 +1,12 @@
+.item {
+  background: #497f6e;
+  border: 1px solid #000;
+  width: 5em;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: yellow;
+  }
+}
