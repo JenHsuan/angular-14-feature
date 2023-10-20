@@ -40,7 +40,7 @@
 }
 
 .description-container {
-  width: 35em;
+  width: 15em;
   font-size: 1.2em;
   margin: 0 auto 4em;
   font-family: audrielle-no1, sans-serif;
@@ -60,4 +60,9 @@
   font-family: audrielle-no1, sans-serif;
   font-style: normal;
   font-weight: 400;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
 }

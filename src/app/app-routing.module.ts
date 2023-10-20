@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'standalone'},
   //lazy loading
   {
@@ -25,9 +25,29 @@ const routes: Routes = [
     title: 'Streamline title'
   },
   {
+    path: 'cli',
+    loadComponent: () => import('../app/cli/cli.component').then(m => m.CliComponent),
+    title: 'CLI enhancements'
+  },
+  {
     path: 'cdk',
     loadChildren: () => import('../app/cdk/cdk.module').then(m => m.CdkModule),
     title: 'CDK improvements'
+  },
+  {
+    path: 'devtool',
+    loadComponent: () => import('../app/dev-tool/dev-tool.component').then(m => m.DevToolComponent),
+    title: 'Dev tools enhancements'
+  },
+  {
+    path: 'esbuild',
+    loadComponent: () => import('../app/esbuild/esbuild.component').then(m => m.EsbuildComponent),
+    title: 'esbuild supported on the ng build'
+  },
+  {
+    path: 'componentharness',
+    loadComponent: () => import('../app/component-harness/component-harness.component').then(m => m.ComponentHarnessComponent),
+    title: 'component harness'
   }
 ];
 

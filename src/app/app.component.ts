@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule, Location } from '@angular/common';
 
 enum ROUTE_TYPE {
   STAND_ALONE = 'STAND_ALONE',
   TYPED_FORM = 'TYPED_FORM',
   NOTES = 'NOTES',
   STREAMLINE = 'STREAMLINE',
-  CDK = 'CDK'
-}
+  CDK = 'CDK',
+  CLI = 'CLI',
+  DEV_TOOL = 'DEV_TOOL',
+  ESBUILD = 'ESBUILD',
+  COMPONENT_HARNESS = 'COMPONENT_HARNESS'
+};
 
 const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/standalone', ROUTE_TYPE.STAND_ALONE],
@@ -16,15 +20,21 @@ const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/typedform', ROUTE_TYPE.TYPED_FORM],
   ['/streamline', ROUTE_TYPE.STREAMLINE],
   ['/cdk', ROUTE_TYPE.CDK],
-])
+  ['/cli', ROUTE_TYPE.CLI],
+  ['/devtool', ROUTE_TYPE.DEV_TOOL],
+  ['/esbuild', ROUTE_TYPE.ESBUILD],
+  ['/componentharness', ROUTE_TYPE.COMPONENT_HARNESS],
+]);
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Notes of Angular v14';
+  title = 'Notes of Angular v14 (updated at 2023/10/20)';
   selectedRoute = ROUTE_TYPE.STAND_ALONE;
   route: string;
 

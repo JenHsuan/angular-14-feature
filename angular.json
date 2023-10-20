@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/angular14-project",
             "index": "src/index.html",
@@ -34,6 +34,14 @@
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "fonts": {
+                  "inline": true
+                },
+                "styles": {
+                  "inlineCritical": true
+                }
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -105,6 +113,9 @@
     }
   },
   "cli": {
-    "analytics": "ceefc095-e685-4760-9ace-9cea4377b13f"
+    "analytics": false,
+    "cache": {
+      "enabled": false
+    }
   }
 }

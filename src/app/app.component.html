@@ -13,12 +13,28 @@
     </button>
     <button [ngClass]="getRouteStyle('STREAMLINE')"
       mat-button (click)="changeRoute('streamline')">
-      Streamline Page Title
+      Streamline Page Title Accessibility
     </button>
     <button [ngClass]="getRouteStyle('CDK')"
       mat-button (click)="changeRoute('cdk')">
       Anglar CDK v14 Release
     </button>
+    <button [ngClass]="getRouteStyle('CLI')"
+      mat-button (click)="changeRoute('cli')">
+      CLI Enhancements
+    </button>
+    <button [ngClass]="getRouteStyle('DEV_TOOL')"
+      mat-button (click)="changeRoute('devtool')">
+      Angular DevTools Enhancements
+    </button>
+    <button [ngClass]="getRouteStyle('ESBUILD')"
+      mat-button (click)="changeRoute('esbuild')">
+      esbuild supported on the ng build
+    </button>
+    <!-- <button [ngClass]="getRouteStyle('COMPONENT_HARNESS')"
+      mat-button (click)="changeRoute('componentharness')">
+      component harness
+    </button> -->
     <button [ngClass]="getRouteStyle('NOTES')"
       mat-button (click)="changeRoute('notes')">
       Notes
@@ -33,6 +49,7 @@
 </div>
 
 <div class="footer">
-  Copy right@Jen-hsuan Hsieh 2023
+  <span>Copy right
+    <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">@Jen-hsuan Hsieh 2023</a> (built with Angular v14)</span>
   <a href="https://daily-learning.herokuapp.com/">daily-learning</a>
 </div>

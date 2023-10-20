@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplatePageTitleStrategy } from './starategy/template-page-title.strategy';
 import { TitleStrategy } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,6 @@ import { TitleStrategy } from '@angular/router';
   providers: [
     {provide: TitleStrategy,  useClass: TemplatePageTitleStrategy}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

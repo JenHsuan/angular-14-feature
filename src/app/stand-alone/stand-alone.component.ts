@@ -29,7 +29,10 @@ export class StandAloneComponent {
   const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'standalone'},
     //lazy loading
-    { path: 'standalone', loadComponent: () => import('../app/stand-alone/stand-alone.component').then(m => m.StandAloneComponent)},
+    {
+      path: 'standalone',
+      loadComponent: () => import('../app/stand-alone/stand-alone.component').then(m => m.StandAloneComponent)
+    },
   ];
 
   ...
@@ -51,6 +54,28 @@ export class StandAloneComponent {
   <app-stand-alone-item></app-stand-alone-item>
   `;
 
+  removeModuleCode = `
+
+  //1. Export the route list from app-routing.module.ts
+  export const routes: Routes = [...];
+
+  //2. Update the app.component.ts to the stand-alone component
+  @Component({
+    selector: 'app-root',
+    standalone: true,
+    imports: [CommonModule, RouterModule],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
+  })
+  export class AppComponent {
+    ...
+
+  //3. Update main.ts
+  ...,
+  bootstrapApplication(AppComponent, {
+    providers: [importProvidersFrom(RouterModule.forRoot(routes))],
+  }); 
+  `;
 
   escapeHtml(str: string) {
     return str.replace(/&/g, "&amp;")
