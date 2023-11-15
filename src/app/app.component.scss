@@ -20,24 +20,23 @@
     }
   }
   
-  .tabs {
-    display: flex;
-    justify-content: center;
-      margin-left: 1em;
-    }
+.tabs {
+  margin: .5em 1em 0 0;
+  width: 100%;
+}
     
-    .tab-item {
-      min-width: 10em;
-      font-size: 1.2em;
-      margin: 1em .1em 1em .1em;
-      padding: .3em;
-      border-radius: .1em;
-      background-color: #fff;
-      cursor: pointer;
-      font-family: audrielle-no1, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    }
+.tab-item {
+  min-width: 10em;
+  font-size: 1.2em;
+  margin: 0 0.1em 0.1em 0.1em;
+  padding: .3em;
+  border-radius: .1em;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: audrielle-no1, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
     
     .tab-item.current {
       color: #fff;

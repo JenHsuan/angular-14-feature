@@ -11,7 +11,8 @@ enum ROUTE_TYPE {
   CLI = 'CLI',
   DEV_TOOL = 'DEV_TOOL',
   ESBUILD = 'ESBUILD',
-  COMPONENT_HARNESS = 'COMPONENT_HARNESS'
+  COMPONENT_HARNESS = 'COMPONENT_HARNESS',
+  ON_PUSH = 'ON_PUSH'
 };
 
 const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
@@ -24,6 +25,7 @@ const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/devtool', ROUTE_TYPE.DEV_TOOL],
   ['/esbuild', ROUTE_TYPE.ESBUILD],
   ['/componentharness', ROUTE_TYPE.COMPONENT_HARNESS],
+  ['/onpush', ROUTE_TYPE.ON_PUSH],
 ]);
 
 @Component({
@@ -34,7 +36,7 @@ const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Notes of Angular v14 (updated at 2023/10/20)';
+  title = 'Notes of Angular v14 (updated at 2023/11/14)';
   selectedRoute = ROUTE_TYPE.STAND_ALONE;
   route: string;
 

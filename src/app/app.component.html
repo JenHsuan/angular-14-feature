@@ -35,6 +35,10 @@
       mat-button (click)="changeRoute('componentharness')">
       component harness
     </button> -->
+    <button [ngClass]="getRouteStyle('ON_PUSH')"
+      mat-button (click)="changeRoute('onpush')">
+      On Push Strategy Enhancements
+    </button>
     <button [ngClass]="getRouteStyle('NOTES')"
       mat-button (click)="changeRoute('notes')">
       Notes
@@ -50,6 +54,6 @@
 
 <div class="footer">
   <span>Copy right
-    <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">@Jen-hsuan Hsieh 2023</a> (built with Angular v14)</span>
+    <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">@ Jen-hsuan Hsieh 2023</a> (built with Angular v14)</span>
   <a href="https://daily-learning.herokuapp.com/">daily-learning</a>
 </div>

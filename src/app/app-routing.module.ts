@@ -48,6 +48,11 @@ export const routes: Routes = [
     path: 'componentharness',
     loadComponent: () => import('../app/component-harness/component-harness.component').then(m => m.ComponentHarnessComponent),
     title: 'component harness'
+  },
+  {
+    path: 'onpush',
+    loadComponent: () => import('../app/on-push/on-push.component').then(m => m.OnPushComponent),
+    title: 'OnPush startegy'
   }
 ];
 
