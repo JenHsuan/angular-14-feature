@@ -1,27 +1,47 @@
-<div class="title">Description</div>
-<div class="description-container">
-  <div>
-     The following new Primitives are promoted to stable in Angular CDK 14.
+<div class="base-container">
+  <div class="title">CDK Improvement</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
   </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="description-container">
+      <div class="title">Description</div>
+      <div>
+        The following new Primitives are promoted to stable in Angular CDK 14.
+      </div>
+    </div>  
+  </div>
+
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div [ngClass]="contentSectionClassName">
+    <div class="title">1. Menu</div>
+    <div class="content-container">
+      <app-cdk-menu></app-cdk-menu>
+    </div>
+
+    <div class="description-container">
+      The @angular/cdk/menu module provides directives to help create custom menu interactions based on the <a href="https://developer.mozilla.org/zh-TW/docs/Learn/Accessibility/WAI-ARIA_basics">WAI ARIA</a> specification.
+    </div>
+
+    <div class="demo-container">
+      <img src="../../assets/image/cdk_aria.png" alt="">    
+    </div>
+
+    <div class="title">2. Dialog</div>
+    <div class="description-container">
+      The Dialog service can be used to open unstyled modal dialogs and to build your own dialog services.
+    </div>
+    <div class="content-container">
+      <button (click)="openDialog()">Open dialog</button>
+    </div>  
+  </div>
+
 </div>
 
-<div class="title">1. Menu</div>
-<div class="content-container">
-  <app-cdk-menu></app-cdk-menu>
-</div>
 
-<div class="description-container">
-  The @angular/cdk/menu module provides directives to help create custom menu interactions based on the <a href="https://developer.mozilla.org/zh-TW/docs/Learn/Accessibility/WAI-ARIA_basics">WAI ARIA</a> specification.
-</div>
 
-<div class="demo-container">
-  <img src="../../assets/image/cdk_aria.png" alt="">    
-</div>
-
-<div class="title">2. Dialog</div>
-<div class="description-container">
-  The Dialog service can be used to open unstyled modal dialogs and to build your own dialog services.
-</div>
-<div class="content-container">
-  <button (click)="openDialog()">Open dialog</button>
-</div>

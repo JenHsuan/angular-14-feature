@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-dev-tool',
@@ -8,11 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './dev-tool.component.html',
   styleUrls: ['./dev-tool.component.scss']
 })
-export class DevToolComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class DevToolComponent extends BaseComponent {
 
 }

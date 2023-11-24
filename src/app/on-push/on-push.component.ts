@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OnPushChildComponent } from './on-push-child/on-push-child.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-on-push',
@@ -10,7 +11,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   templateUrl: './on-push.component.html',
   styleUrls: ['./on-push.component.scss']
 })
-export class OnPushComponent implements OnInit {
+export class OnPushComponent extends BaseComponent implements OnInit {
   messages = [
     "hello",
     "hi",
@@ -76,13 +77,5 @@ export class OnPushComponent implements OnInit {
     window.setInterval(() => {
       this.message = this.messages[Math.floor(Math.random() * this.messages.length)];
     }, 1000)
-  }
-
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
   }
 }

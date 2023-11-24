@@ -1,23 +1,39 @@
-<div class="title">Description</div>
-<div class="description-container">
-  <div>
-    The streamline title has the following advantages.
+<div class="base-container">
+  <div class="title">Streamline page title accessibility</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
   </div>
-  <ol>
-    <li>User friendly: The user can check the title when there is a bunch of tabs on the browser.</li>
-  </ol>
-</div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">Description</div>
+    <div class="description-container">
+      <div>
+        The streamline title has the following advantages.
+      </div>
+      <ol>
+        <li>User friendly: The user can check the title when there is a bunch of tabs on the browser.</li>
+      </ol>
+    </div>
+  </div>
+  
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div [ngClass]="contentSectionClassName">
+    <div class="title">Simple scenario</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(instruction)"></code>
+      </pre>
+    </div>
 
-<div class="title">Simple scenario</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="escapeHtml(instruction)"></code>
-  </pre>
-</div>
-
-<div class="title">Complex scenario</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="escapeHtml(complexInstruction)"></code>
-  </pre>
+    <div class="title">Complex scenario</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(complexInstruction)"></code>
+      </pre>
+    </div>
+  </div>
 </div>

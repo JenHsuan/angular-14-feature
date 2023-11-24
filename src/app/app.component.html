@@ -1,59 +1,69 @@
-<div class="header">
-  <div class="title">
-    {{title}}
+<div class="app-container">
+  <div class="sider-bar">
+    <div class="tabs">
+      <div class="title-container">
+        <img src="../assets/image/angular-logo.png" alt="">
+        <div class="title">
+          {{title}}
+        </div>
+      </div>
+      <button [ngClass]="getRouteStyle('STAND_ALONE')"
+        mat-button (click)="changeRoute('standalone')">
+        Stand-alone component (developer preview)
+      </button>
+      <button [ngClass]="getRouteStyle('TYPED_FORM')"
+        mat-button (click)="changeRoute('typedform')">
+        Typed Form
+      </button>
+      <button [ngClass]="getRouteStyle('STREAMLINE')"
+        mat-button (click)="changeRoute('streamline')">
+        Streamline Page Title Accessibility
+      </button>
+      <button [ngClass]="getRouteStyle('CDK')"
+        mat-button (click)="changeRoute('cdk')">
+        Anglar CDK v14 Release
+      </button>
+      <button [ngClass]="getRouteStyle('CLI')"
+        mat-button (click)="changeRoute('cli')">
+        CLI Enhancements
+      </button>
+      <button [ngClass]="getRouteStyle('DEV_TOOL')"
+        mat-button (click)="changeRoute('devtool')">
+        Angular DevTools Enhancements
+      </button>
+      <button [ngClass]="getRouteStyle('ESBUILD')"
+        mat-button (click)="changeRoute('esbuild')">
+        esbuild supported on the ng build (experimental feature)
+      </button>
+      <!-- <button [ngClass]="getRouteStyle('COMPONENT_HARNESS')"
+        mat-button (click)="changeRoute('componentharness')">
+        component harness
+      </button> -->
+      <button [ngClass]="getRouteStyle('ON_PUSH')"
+        mat-button (click)="changeRoute('onpush')">
+        On Push Strategy Enhancements
+      </button>
+      <button [ngClass]="getRouteStyle('NOTES')"
+        mat-button (click)="changeRoute('notes')">
+        Notes
+      </button>
+      <div class="footer">
+        <div>
+          Copy right @ 
+          <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">Jen-hsuan Hsieh</a>
+        </div>
+        <div>
+          Laste updated at {{updateTime}}
+        </div>
+        <div><a href="of_alpha@hotmail.com">Contact me</a></div>
+      </div>
+    </div>
   </div>
-  <div class="tabs">
-    <button [ngClass]="getRouteStyle('STAND_ALONE')"
-      mat-button (click)="changeRoute('standalone')">
-      Stand-alone component
-    </button>
-    <button [ngClass]="getRouteStyle('TYPED_FORM')"
-      mat-button (click)="changeRoute('typedform')">
-      Typed Form
-    </button>
-    <button [ngClass]="getRouteStyle('STREAMLINE')"
-      mat-button (click)="changeRoute('streamline')">
-      Streamline Page Title Accessibility
-    </button>
-    <button [ngClass]="getRouteStyle('CDK')"
-      mat-button (click)="changeRoute('cdk')">
-      Anglar CDK v14 Release
-    </button>
-    <button [ngClass]="getRouteStyle('CLI')"
-      mat-button (click)="changeRoute('cli')">
-      CLI Enhancements
-    </button>
-    <button [ngClass]="getRouteStyle('DEV_TOOL')"
-      mat-button (click)="changeRoute('devtool')">
-      Angular DevTools Enhancements
-    </button>
-    <button [ngClass]="getRouteStyle('ESBUILD')"
-      mat-button (click)="changeRoute('esbuild')">
-      esbuild supported on the ng build
-    </button>
-    <!-- <button [ngClass]="getRouteStyle('COMPONENT_HARNESS')"
-      mat-button (click)="changeRoute('componentharness')">
-      component harness
-    </button> -->
-    <button [ngClass]="getRouteStyle('ON_PUSH')"
-      mat-button (click)="changeRoute('onpush')">
-      On Push Strategy Enhancements
-    </button>
-    <button [ngClass]="getRouteStyle('NOTES')"
-      mat-button (click)="changeRoute('notes')">
-      Notes
-    </button>
+  <div class="app-content">
+    <div class="portal-container">
+      <div class="tab-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="portal-container">
-  <div class="tab-content">
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
-<div class="footer">
-  <span>Copy right
-    <a href="https://www.linkedin.com/in/jen-hsuan-hsieh-6a13347a/">@ Jen-hsuan Hsieh 2023</a> (built with Angular v14)</span>
-  <a href="https://daily-learning.herokuapp.com/">daily-learning</a>
 </div>

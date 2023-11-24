@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StandAloneItemComponent } from './stand-alone-item/stand-alone-item.component';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-stand-alone',
@@ -9,7 +10,7 @@ import { StandAloneItemComponent } from './stand-alone-item/stand-alone-item.com
   templateUrl: './stand-alone.component.html',
   styleUrls: ['./stand-alone.component.scss']
 })
-export class StandAloneComponent {
+export class StandAloneComponent extends BaseComponent {
   instruction = `
   npx @angular/cli@14 new Angular14Project
   `;
@@ -76,12 +77,4 @@ export class StandAloneComponent {
     providers: [importProvidersFrom(RouterModule.forRoot(routes))],
   }); 
   `;
-
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-  }
 }

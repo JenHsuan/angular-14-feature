@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-esbuild',
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './esbuild.component.html',
   styleUrls: ['./esbuild.component.scss']
 })
-export class EsbuildComponent {
+export class EsbuildComponent extends BaseComponent {
   steps = `
   //1. Update the angular.json file
   "architect": {
@@ -20,12 +21,4 @@ export class EsbuildComponent {
   
   //2. Build the project
   ng build`;
-
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-  }
 }

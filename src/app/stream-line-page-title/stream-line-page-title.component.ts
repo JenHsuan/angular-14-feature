@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-stream-line-page-title',
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './stream-line-page-title.component.html',
   styleUrls: ['./stream-line-page-title.component.scss']
 })
-export class StreamLinePageTitleComponent {
+export class StreamLinePageTitleComponent extends BaseComponent {
 
   instruction = `
   //Update the app-routing.module.ts
@@ -60,13 +61,5 @@ export class StreamLinePageTitleComponent {
     ...
   })
   `;
-
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-  }
 
 }

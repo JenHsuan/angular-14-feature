@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormArray, FormControl, FormGroup, FormRecord, ReactiveFormsModule, UntypedFormGroup, Validators } from '@angular/forms';
 import { TypedForm } from './service/typed-form.domain';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-typed-form',
@@ -10,7 +11,7 @@ import { TypedForm } from './service/typed-form.domain';
   templateUrl: './typed-form.component.html',
   styleUrls: ['./typed-form.component.scss']
 })
-export class TypedFormComponent {
+export class TypedFormComponent extends BaseComponent {
   fromGroupCode = `
   interface TypedForm {
     firstName: FormControl<string>;
@@ -174,11 +175,4 @@ export class TypedFormComponent {
     //this.profileForm.controls.address.get('street') - 1
   }
 
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-  }
 }

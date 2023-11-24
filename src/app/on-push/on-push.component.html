@@ -1,26 +1,48 @@
-<div class="title">Description</div>
-<div class="description-container">
-  <div>
-     The OnPush(CheckOnce) startegy only marks the component as dirty for the following conditions.
+<div class="base-container">
+  <div class="title">OnPush Strategy enhancement</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
   </div>
-  <ol>
-    <li>The input should be immutable. The reference to the input between the current value and the previous value should be different
-    <li>Browser events of itself or it's child were triggered</li>
-    <li>The observable subscribed by the async pipe received a new value</li>    
-  </ol>
-  <div>
-    After Angular 14, the component will be marked as dirty when there is any changes of the [ngModel].
- </div>
-</div>
-
-<div class="title">Simple scenario</div>
-<div class="content-container">
-  <pre>
-    <code [innerHTML]="escapeHtml(code)"></code>
-  </pre>
-</div>
-
-<div class="title">Demo</div>
-<div class="demo-container">
-  <app-on-push-child [ngModel]="message"></app-on-push-child>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">Description</div>
+    <div class="description-container">
+      <div>
+         The OnPush(CheckOnce) startegy only marks the component as dirty for the following conditions.
+      </div>
+      <ol>
+        <li>The input should be immutable. The reference to the input between the current value and the previous value should be different
+        <li>Browser events of itself or it's child were triggered</li>
+        <li>The observable subscribed by the async pipe received a new value</li>    
+      </ol>
+      <div>
+        After Angular 14, the component will be marked as dirty when there is any changes of the [ngModel].
+     </div>
+    </div>
+  </div>
+  
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div [ngClass]="contentSectionClassName">
+    <div class="title">Simple scenario</div>
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="escapeHtml(code)"></code>
+      </pre>
+    </div>
+  </div>
+  
+  <!-- demo -->
+  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
+    >
+  </div>
+  <div [ngClass]="demoSectionClassName">
+    <div class="title">Demo</div>
+    <div class="demo-container">
+      <app-on-push-child [ngModel]="message"></app-on-push-child>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-cli',
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cli.component.html',
   styleUrls: ['./cli.component.scss']
 })
-export class CliComponent {
+export class CliComponent extends BaseComponent {
   cacheInstruction = `
   ng cache enable/on
   ng cache disable/off
@@ -20,12 +21,4 @@ export class CliComponent {
   ng analytics disable/off (-g)
   ng analytics clean
   ng analytics prompt (-g)`;
-
-  escapeHtml(str: string) {
-    return str.replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-  }
 }
