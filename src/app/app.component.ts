@@ -3,6 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
 
 enum ROUTE_TYPE {
+  HOME = 'HOME',
   STAND_ALONE = 'STAND_ALONE',
   TYPED_FORM = 'TYPED_FORM',
   NOTES = 'NOTES',
@@ -16,6 +17,7 @@ enum ROUTE_TYPE {
 };
 
 const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
+  ['/home', ROUTE_TYPE.HOME],
   ['/standalone', ROUTE_TYPE.STAND_ALONE],
   ['/notes', ROUTE_TYPE.NOTES],
   ['/typedform', ROUTE_TYPE.TYPED_FORM],
@@ -38,7 +40,7 @@ const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
 export class AppComponent {
   title = 'Notes of Angular v14';
   updateTime = '2023/11/14';
-  selectedRoute = ROUTE_TYPE.STAND_ALONE;
+  selectedRoute = ROUTE_TYPE.HOME;
   route: string;
 
   constructor(

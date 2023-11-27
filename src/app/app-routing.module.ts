@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'standalone'},
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  {
+    path: 'home',
+    loadComponent: () => import('../app/home/home.component').then(m => m.HomeComponent),
+    title: 'Angular 15'
+  },
   //lazy loading
   {
     path: 'standalone',
