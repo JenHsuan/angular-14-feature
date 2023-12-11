@@ -1,12 +1,12 @@
 <div class="app-container">
   <div class="sider-bar">
     <div class="tabs">
-      <div class="title-container">
+      <a class="title-container" href="/home">
         <img src="../assets/image/angular-logo.png" alt="">
         <div class="title">
           {{title}}
         </div>
-      </div>
+      </a>
       <button [ngClass]="getRouteStyle('STAND_ALONE')"
         mat-button (click)="changeRoute('standalone')">
         Standalone Component (Developer preview)
