@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { OnPushChildComponent } from './on-push-child/on-push-child.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BaseComponent } from '../base/base.component';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
 
 @Component({
   selector: 'app-on-push',
   standalone: true,
-  imports: [CommonModule, OnPushChildComponent, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, OnPushChildComponent, FormsModule, ReactiveFormsModule, SectionContainerComponent],
   templateUrl: './on-push.component.html',
   styleUrls: ['./on-push.component.scss']
 })
