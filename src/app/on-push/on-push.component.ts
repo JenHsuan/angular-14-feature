@@ -4,15 +4,18 @@ import { OnPushChildComponent } from './on-push-child/on-push-child.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BaseComponent } from '../base/base.component';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-on-push',
   standalone: true,
-  imports: [CommonModule, OnPushChildComponent, FormsModule, ReactiveFormsModule, SectionContainerComponent],
+  imports: [CommonModule, OnPushChildComponent, FormsModule, ReactiveFormsModule, SectionContainerComponent, HighlightModule],
   templateUrl: './on-push.component.html',
   styleUrls: ['./on-push.component.scss']
 })
-export class OnPushComponent extends BaseComponent implements OnInit {
+export class OnPushComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.ON_PUSH);
   messages = [
     "hello",
     "hi",

@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">Streamline page title accessibility</div>
+  <div class="page-title">{{ title }}</div>
 
   <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <app-section-container>
     <div class="title">Description</div>
     <div class="description-container">
       <div>
@@ -15,25 +12,29 @@
         <li>User friendly: The user can check the title when there is a bunch of tabs on the browser.</li>
       </ol>
     </div>
-  </div>
+  </app-section-container>
   
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">Simple scenario</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(instruction)"></code>
+        <code
+          [highlight]="instruction"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
 
     <div class="title">Complex scenario</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(complexInstruction)"></code>
+        <code
+          [highlight]="complexInstruction"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
-  </div>
-</div>
+  </app-section-container>

@@ -2,15 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StandAloneItemComponent } from './stand-alone-item/stand-alone-item.component';
 import { BaseComponent } from '../base/base.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-stand-alone',
   standalone: true,
-  imports: [CommonModule, StandAloneItemComponent],
+  imports: [CommonModule, StandAloneItemComponent, SectionContainerComponent, HighlightModule],
   templateUrl: './stand-alone.component.html',
   styleUrls: ['./stand-alone.component.scss']
 })
-export class StandAloneComponent extends BaseComponent {
+export class StandAloneComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.STAND_ALONE);
   instruction = `
   npx @angular/cli@14 new Angular14Project
   `;

@@ -1,16 +1,17 @@
 <div class="base-container">
-  <div class="title">Typed Form</div>
+  <div class="page-title">{{ title }}</div>
 
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">1. FormGroup and explicit interface</div>
     
-    <div class="content-container">
+    <div class="description-container">
       <pre>
-        <code [innerHTML]="escapeHtml(fromGroupCode)"></code>
+        <code
+          [highlight]="fromGroupCode"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
     
@@ -25,9 +26,13 @@
       </ol>
     </div>
     
-    <div class="content-container">
+    <div class="description-container">
       <pre>
-        <code [innerHTML]="escapeHtml(fromGroupCodeError)"></code>
+        <code
+          [highlight]="fromGroupCodeError"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
     
@@ -38,9 +43,13 @@
       </div>
     </div>
     
-    <div class="content-container">
+    <div class="description-container">
       <pre>
-        <code [innerHTML]="escapeHtml(untypedFromGroupCodeError)"></code>
+        <code
+          [highlight]="untypedFromGroupCodeError"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
     
@@ -90,5 +99,5 @@
       <button type="submit" [disabled]="!profileForm.valid">Submit</button>
       </form>
     </div>
-  </div>
+  </app-section-container>
 </div>

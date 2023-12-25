@@ -58,6 +58,21 @@ export const routes: Routes = [
     path: 'onpush',
     loadComponent: () => import('../app/on-push/on-push.component').then(m => m.OnPushComponent),
     title: 'OnPush startegy'
+  },
+  {
+    path: 'breaking-changes',
+    loadComponent: () => import('../app/breaking-changes/breaking-changes.component').then(m => m.default),
+    title: 'Breaking changes'
+  },
+  {
+    path: 'deprecations',
+    loadComponent: () => import('../app/deprecations/deprecations.component').then(m => m.default),
+    title: 'Deprecations'
+  },
+  {
+    path: 'documents',
+    loadComponent: () => import('../app/documents/documents.component').then(m => m.default),
+    title: 'Documents'
   }
 ];
 

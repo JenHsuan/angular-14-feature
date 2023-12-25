@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from '../base/base.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { HighlightModule } from 'ngx-highlightjs';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
 
 @Component({
   selector: 'app-stream-line-page-title',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './stream-line-page-title.component.html',
   styleUrls: ['./stream-line-page-title.component.scss']
 })
-export class StreamLinePageTitleComponent extends BaseComponent {
+export class StreamLinePageTitleComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.STREAMLINE);
 
   instruction = `
   //Update the app-routing.module.ts

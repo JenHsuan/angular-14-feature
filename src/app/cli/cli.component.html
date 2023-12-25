@@ -1,5 +1,5 @@
 <div class="base-container">
-  <div class="title">CLI Improvement</div>
+  <div class="page-title">{{ title }}</div>
   
   <!-- content -->
   <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
@@ -14,7 +14,11 @@
     </div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(cacheInstruction)"></code>
+        <code
+          [highlight]="cacheInstruction"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
 
@@ -26,7 +30,11 @@
     </div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(analyticsInstruction)"></code>
+        <code
+          [highlight]="analyticsInstruction"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>  
   </div>

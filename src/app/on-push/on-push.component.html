@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">OnPush Strategy enhancement</div>
+  <div class="page-title">{{ title }}</div>
 
   <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <app-section-container>
     <div class="title">Description</div>
     <div class="description-container">
       <div>
@@ -23,6 +20,7 @@
         After Angular 14, the component will be marked as dirty when there is any changes of the [ngModel].
      </div>
     </div>
+  </app-section-container>
 
     <app-section-container>
       <div class="title">Issue</div>
@@ -32,29 +30,26 @@
         </a>
       </div>
     </app-section-container>
-  </div>
   
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">Simple scenario</div>
     <div class="content-container">
       <pre>
-        <code [innerHTML]="escapeHtml(code)"></code>
+        <code
+          [highlight]="code"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
-  </div>
+  </app-section-container>
   
   <!-- demo -->
-  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
-    >
-  </div>
-  <div [ngClass]="demoSectionClassName">
+  <app-section-container>
     <div class="title">Demo</div>
     <div class="demo-container">
       <app-on-push-child [ngModel]="message"></app-on-push-child>
     </div>
-  </div>
+  </app-section-container>
 </div>

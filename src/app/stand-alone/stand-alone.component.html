@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">Stand-alone component</div>
+  <div class="page-title">{{ title }}</div>
   
   <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <app-section-container>
     <div class="title">Description</div>
     <div class="description-container">
       <div>
@@ -18,43 +15,51 @@
         <li>The stand-alone component can be lazy loaded</li>
       </ol>
     </div>  
-  </div>
+  </app-section-container>
   
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">How to Create a stand-alone component using CLI?</div>
-    <div class="content-container">
-      <code [innerHTML]="escapeHtml(stanaloneInstruction)"></code>
+    <div class="description-container">
+      <pre>
+        <code
+          [highlight]="stanaloneInstruction"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
+      </pre>
     </div>
 
     <div class="title">Code for creating new stand-alone component</div>
-    <div class="content-container">
+    <div class="description-container">
       <pre>
-        <code [innerHTML]="escapeHtml(code)"></code>
+        <code
+          [highlight]="code"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
 
     <div class="title">Code for remove app.module.ts</div>
-    <div class="content-container">
+    <div class="description-container">
       <pre>
-        <code [innerHTML]="escapeHtml(removeModuleCode)"></code>
+        <code
+          [highlight]="removeModuleCode"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+        ></code>
       </pre>
     </div>
-  </div>
+  </app-section-container>
   
   <!-- demo -->
-  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
-    >
-  </div>
-  <div [ngClass]="demoSectionClassName">
+    <app-section-container>
     <div class="title">Demo</div>
     <div class="demo-container"> 
       <ng-container *ngFor="let index of [1, 2, 3, 4, 5]">
         <app-stand-alone-item [index]="index"></app-stand-alone-item>
       </ng-container>
     </div>
-  </div>
+  </app-section-container>
 </div>

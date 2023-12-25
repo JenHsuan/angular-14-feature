@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { FormArray, FormControl, FormGroup, FormRecord, ReactiveFormsModule, UntypedFormGroup, Validators } from '@angular/forms';
 import { TypedForm } from './service/typed-form.domain';
 import { BaseComponent } from '../base/base.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-typed-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, SectionContainerComponent, HighlightModule],
   templateUrl: './typed-form.component.html',
   styleUrls: ['./typed-form.component.scss']
 })
-export class TypedFormComponent extends BaseComponent {
+export class TypedFormComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.TYPED_FORM);
   fromGroupCode = `
   interface TypedForm {
     firstName: FormControl<string>;
