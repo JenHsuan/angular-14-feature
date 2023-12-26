@@ -73,7 +73,11 @@ export const routes: Routes = [
     path: 'documents',
     loadComponent: () => import('../app/documents/documents.component').then(m => m.default),
     title: 'Documents'
-  }
+  },
+  {
+    path: 'migrations',
+    loadComponent: () => import('../app/migrations/migrations.component').then(m => m.default),
+  },
 ];
 
 @NgModule({

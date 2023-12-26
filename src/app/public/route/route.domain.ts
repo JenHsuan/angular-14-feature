@@ -12,11 +12,13 @@ export enum ROUTE_TYPE {
   ON_PUSH = 'ON_PUSH',
   BREAKING_CHANGE = 'BREAKING_CHANGE',
   DEPRECATIONS = 'DEPRECATIONS',
-  DOCUMENTS = 'DOCUMENTS'
+  DOCUMENTS = 'DOCUMENTS',
+  MIGRATIONS = 'MIGRATIONS'
 };
 
 export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/home', ROUTE_TYPE.HOME],
+  ['/migrations', ROUTE_TYPE.MIGRATIONS],
   ['/standalone', ROUTE_TYPE.STAND_ALONE],
   ['/notes', ROUTE_TYPE.NOTES],
   ['/typedform', ROUTE_TYPE.TYPED_FORM],
@@ -33,16 +35,17 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
 ]);
 
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
-  [ROUTE_TYPE.HOME, 'Notes of Angular v17'],
-  [ROUTE_TYPE.STAND_ALONE, 'Enhancements for Standalone API (Developer Preview)'],
-  [ROUTE_TYPE.TYPED_FORM, 'Typed Form'],
-  [ROUTE_TYPE.STREAMLINE, 'Streamline Page Title Accessibility'],
-  [ROUTE_TYPE.CDK, 'Anglar CDK v14 Release'],
-  [ROUTE_TYPE.CLI, 'CLI Enhancements'],
-  [ROUTE_TYPE.DEV_TOOL, 'Angular DevTools Enhancements'],
-  [ROUTE_TYPE.ESBUILD, 'esbuild Supported on the ng build (Experimental Feature)'],
-  [ROUTE_TYPE.COMPONENT_HARNESS,'Component Harness'],
-  [ROUTE_TYPE.ON_PUSH, 'OnPush Strategy Enhancements (Bugfix)'],
+  [ROUTE_TYPE.MIGRATIONS, 'Upgrade to Angular 14'],
+  [ROUTE_TYPE.HOME, 'Notes of Angular v14'],
+  [ROUTE_TYPE.STAND_ALONE, 'New Feature - Enhancements for Standalone API (Developer Preview)'],
+  [ROUTE_TYPE.TYPED_FORM, 'New Feature - Typed Form'],
+  [ROUTE_TYPE.STREAMLINE, 'New Feature - Streamline Page Title Accessibility'],
+  [ROUTE_TYPE.CDK, 'New Feature - Anglar CDK v14 Release'],
+  [ROUTE_TYPE.CLI, 'New Feature - CLI Enhancements'],
+  [ROUTE_TYPE.DEV_TOOL, 'New Feature - Angular DevTools Enhancements'],
+  [ROUTE_TYPE.ESBUILD, 'New Feature - esbuild Supported on the ng build (Experimental Feature)'],
+  [ROUTE_TYPE.COMPONENT_HARNESS,'New Feature - Component Harness'],
+  [ROUTE_TYPE.ON_PUSH, 'Bugfix - OnPush Strategy Enhancements'],
   [ROUTE_TYPE.NOTES, 'Other Features'],
   [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
   [ROUTE_TYPE.DEPRECATIONS, 'Deprecations'],
