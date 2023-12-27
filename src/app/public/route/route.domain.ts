@@ -37,7 +37,7 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.MIGRATIONS, 'Upgrade to Angular 14'],
   [ROUTE_TYPE.HOME, 'Notes of Angular v14'],
-  [ROUTE_TYPE.STAND_ALONE, 'New Feature - Enhancements for Standalone API (Developer Preview)'],
+  [ROUTE_TYPE.STAND_ALONE, 'New Feature - Standalone API (Developer Preview)'],
   [ROUTE_TYPE.TYPED_FORM, 'New Feature - Typed Form'],
   [ROUTE_TYPE.STREAMLINE, 'New Feature - Streamline Page Title Accessibility'],
   [ROUTE_TYPE.CDK, 'New Feature - Anglar CDK v14 Release'],

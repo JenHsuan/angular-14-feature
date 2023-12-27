@@ -1,0 +1,31 @@
+.time-line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li {
+    list-style-type: none;
+    position: relative;
+    a {
+      font-size: .7em;
+    }
+  }
+  .time-line-item {
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+    padding-left: .2em;
+    width: 6em;
+    height: 6em;
+    background: oklch(97.12% .002 325.59);
+    &::before {
+      content: '';
+      width: 1em;
+      position: absolute;
+      right: 6em;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
