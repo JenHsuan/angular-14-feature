@@ -2,17 +2,14 @@
   <div class="page-title">{{ title }}</div>
   
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">1. ng cache</div>
     <div class="description-container">
       <div>
         Control the cache policy of the local environment. (v13 used ng config cli.cache)
       </div>
     </div>
-    <div class="content-container">
+    <div class="description-container">
       <pre>
         <code
           [highlight]="cacheInstruction"
@@ -28,7 +25,7 @@
         Control whether sending the collected analytics data to Google Anagular team or not 
       </div>
     </div>
-    <div class="content-container">
+    <div class="description-container">
       <pre>
         <code
           [highlight]="analyticsInstruction"
@@ -37,6 +34,6 @@
         ></code>
       </pre>
     </div>  
-  </div>
+  </app-section-container>
   
 </div>

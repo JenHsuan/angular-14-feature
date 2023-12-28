@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BaseComponent } from '../base/base.component';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { HighlightModule } from 'ngx-highlightjs';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
 
 @Component({
   selector: 'app-cli',
   standalone: true,
-  imports: [CommonModule, HighlightModule],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './cli.component.html',
   styleUrls: ['./cli.component.scss']
 })
